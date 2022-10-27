@@ -32,3 +32,9 @@ the api requests
 
 Tha above decisions are coming to support the ability to maintain, fix, read, and scale the project, in really easy manner.1
 
+What would I add/change:
+-I would add some scenarios for testing,
+-I would name the tests with the GIVEN, WHEN, THEN
+-I would have a better ui
+
+
