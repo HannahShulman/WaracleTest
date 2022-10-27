@@ -28,6 +28,26 @@ class MainCoroutineScopeRule(
     }
 }
 
+/**
+ * UnconfinedCoroutineScopeRule
+ *
+ * for undefined unit test scopes as [Dispatchers.IO],[Dispatchers.Main]
+ */
+class UnconfinedCoroutineScopeRule(
+    val testDispatcher: TestDispatcher = UnconfinedTestDispatcher(),
+) : TestWatcher(), CoroutineScope by TestScope(testDispatcher) {
+
+    override fun starting(description: Description) {
+        super.starting(description)
+        Dispatchers.setMain(testDispatcher)
+    }
+
+    override fun finished(description: Description) {
+        super.finished(description)
+        Dispatchers.resetMain()
+    }
+}
+
 
 
 
