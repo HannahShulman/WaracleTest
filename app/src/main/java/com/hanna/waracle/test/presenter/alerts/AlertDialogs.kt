@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager
 fun showErrorAlert(context: Context, message: String, onAction: () -> Unit) {
     val builder = AlertDialog.Builder(context)
     builder.setTitle("An Error!")
+    builder.setCancelable(false)//to avoid user from dismissing dialog, and remaining with an empty page.
     builder.setMessage((message))//TODO("Error messages should be mapped.")
     builder.setNegativeButton("RETRY") { dialogInterface, which ->
         dialogInterface.dismiss()
