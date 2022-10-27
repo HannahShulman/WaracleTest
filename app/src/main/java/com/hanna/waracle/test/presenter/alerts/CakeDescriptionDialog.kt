@@ -26,7 +26,7 @@ class CakeDescriptionDialog : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.productDescription.text =
+        binding.cakeDescription.text =
             arguments?.getString(DESCRIPTION) ?: "No description found"
     }
 

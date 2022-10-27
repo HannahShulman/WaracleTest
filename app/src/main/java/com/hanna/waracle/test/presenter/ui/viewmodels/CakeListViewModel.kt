@@ -29,8 +29,8 @@ class CakeListViewModel @Inject constructor(
 
     fun fetchCakes(isRefreshing: Boolean = false) {
         if (!isRefreshing) {
-            val productsValue = cakes.value?.data
-            cakes.postValue(Resource.loading(productsValue))//post if not being refreshed
+            val cakesValue = cakes.value?.data
+            cakes.postValue(Resource.loading(cakesValue))//post if not being refreshed
         }
         viewModelScope.launch {
             when (val result: ResponseWrapper<List<CakeItem>> = getCakeListUseCase()) {

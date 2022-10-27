@@ -20,7 +20,7 @@ class GetCakeListUseCaseTest : BaseTest() {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `when GetProductDetailsByIdUseCase is invoked, repository calls getProductDetails`() =
+    fun `when GetCakeListUseCase is invoked, repository calls getCakes`() =
         runSuspendTest {
             getCakeListUseCase.invoke()
             verify(cakeRepository).getCakes()
