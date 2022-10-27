@@ -14,3 +14,21 @@ Tasks:
     1. Handle orientation changes, ideally without reloading the list
     2. Provide an option to retry when an error is presented
     3. Animate in list items (e.g. fade in or fall down animations)
+
+
+Proposed Architecture:
+I would advise using MVVM+Clean.
+As previously recommended by Google, I have decided to use the MVVM achitecture.
+I have also added some usecases, and advised by Uncle Bob.
+
+Some additional notes:
+Mappers - in order to create a strict separation, between data that's returned by the server to the
+entities that are being used in the app, the mapper comes to serve this purpose.
+
+Hilt (DI)- a library supported by google,that wraps dagger, to give an easy way to inject dependencies.
+
+Coroutines (Async) - the suggested and recommended library,for handling async tasks. This supports
+the api requests
+
+Tha above decisions are coming to support the ability to maintain, fix, read, and scale the project, in really easy manner.A
+
