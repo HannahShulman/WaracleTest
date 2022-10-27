@@ -20,8 +20,14 @@ android {
 
     buildTypes {
         release {
+            buildConfigField "String", "BASE_URL", '"https://gist.githubusercontent.com/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://gist.githubusercontent.com/"'
+            applicationIdSuffix '.debug'
+            versionNameSuffix 'debug'
         }
     }
     compileOptions {
